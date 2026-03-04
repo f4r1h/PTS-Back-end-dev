@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class admin extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'username',
+        'password',
+        'email',
+        'nomer_telpon',
+    ];
+}
