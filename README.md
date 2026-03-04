@@ -7,9 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About This Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is a heavy equipment rental application project to complete the
+Back End Development course.
+
+This project was developed by a team of student engineers consisting of:
+1. Deandre Hayfa Pasha (Team Leader),
+2. Farih Inayatur Rahman (Member).
+
+This application project was compiled by Farih Inayatur.
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
