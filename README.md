@@ -16,7 +16,7 @@ This project was developed by a team of student engineers consisting of:
 1. Deandre Hayfa Pasha (Team Leader),
 2. Farih Inayatur Rahman (Member).
 
-This application project was compiled by Farih Inayatur.
+The application project was compiled by Deandre Hayfa and Farih Inayatur.
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
