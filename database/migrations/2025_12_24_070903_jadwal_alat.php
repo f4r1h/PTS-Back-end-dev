@@ -11,12 +11,12 @@ return new class extends Migration
     {
      Schema::create(table: 'jadwal_alat', callback: function(blueprint $table):void{
             $table->id();
-            $table->string('tanggal_mulai')->unique;
+            $table->string('tanggal_mulai')->unique();
             $table->string('tanggal_selesai');
             $table->enum('status_jadwal', ['dijadwalkan', 'sedang berjalan', 'selesai'])->default('selesai');
-            $table->foreignId('alat_berat_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('transaksi_id')->constrained()->cascadeOnDelete();
-            $table->timestamp();
+            $table->foreignId('alat_berat_id')->constrained('alat_berat')->cascadeOnDelete();
+            $table->foreignId('transaksi_id')->constrained('transaksi')->cascadeOnDelete();
+            $table->timestamps();
         });
 
     }

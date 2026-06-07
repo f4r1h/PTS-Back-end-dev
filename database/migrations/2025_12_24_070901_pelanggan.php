@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('jenis');
-            $table->string('nomer_identitas')->unique;
+            $table->string('nomer_identitas')->unique();
             $table->string('nama_perusahaan');
             $table->string('penanggungjawab');
             $table->string('alamat');
-            $table->string('nomer_telpon')->unique;
+            $table->string('nomer_telpon')->unique();
             $table->string('tanggal_daftar');
             $table->string('email')->unique();
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 

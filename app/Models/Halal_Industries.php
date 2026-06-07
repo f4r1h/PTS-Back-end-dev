@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class halal_industries extends Model
+class Halal_Industries extends Model
 {
     use HasFactory;
+
+    protected $table = 'halal_industries';
 
     protected $fillable = [
         'admin',
@@ -17,5 +20,6 @@ class halal_industries extends Model
         'pelanggan',
         'laporan_pekerjaan',
         'operator',
+        'email',
     ];
 }

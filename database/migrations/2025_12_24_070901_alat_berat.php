@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('nama_alat');
             $table->string('tipe_alat');
-            $table->string('kode_unit')->unique;
+            $table->string('kode_unit')->unique();
             $table->string('spesifikasi');
             $table->string('harga_sewa_per_hari');
             $table->enum('kondisi', ['baik', 'maintenance', 'rusak'])->default('baik');
             $table->enum('status_sewa', ['tersedia', 'disewa', 'dipesan'])->default('tersedia');
             $table->string('lokasi_sekarang');
             $table->string('foto_alat')->unique();
-            $table->timestamp();
+            $table->timestamps();
         });
 
     }

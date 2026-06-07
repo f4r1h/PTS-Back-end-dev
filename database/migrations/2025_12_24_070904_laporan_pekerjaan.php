@@ -13,14 +13,14 @@ return new class extends Migration
     {
     Schema::create(table: 'laporan_pekerjaan', callback: function(blueprint $table):void{
             $table->id();
-            $table->string('tanggal_laporan')->unique;
+            $table->string('tanggal_laporan')->unique();
             $table->string('jam_kerja_alat');
             $table->string('bahan_bakar_terpakai');
             $table->string('catatan_kondisi');
             $table->string('foto_laporan');
-            $table->foreignId('jadwal_alat_id')->constrained();
-            $table->foreignId('operator_id')->constrained();
-            $table->timestamp();
+            $table->foreignId('jadwal_alat_id')->constrained('jadwal_alat');
+            $table->foreignId('operator_id')->constrained('operator');
+            $table->timestamps();
         });
     }
 

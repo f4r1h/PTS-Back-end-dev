@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $admin = \App\Models\admin::all();
+        $admin = \App\Models\Admin::all();
         return view('admin.index', compact('admin'));
     }
 
@@ -26,7 +26,7 @@ class AdminController extends Controller
             'nomer_telpon' => 'required',
         ]);
 
-        \App\Models\admin::create($request->all());
+        \App\Models\Admin::create($request->all());
 
         return redirect()->route('admin.index')
             ->with('success', 'admin created successfully.');
@@ -34,7 +34,7 @@ class AdminController extends Controller
 
     public function edit(string $id)
     {
-        $admin = \App\Models\admin::findOrFail($id);
+        $admin = \App\Models\Admin::findOrFail($id);
         return view('admin.edit', compact('admin'));
     }
 
@@ -47,7 +47,7 @@ class AdminController extends Controller
             'nomer_telpon' => 'required',
         ]);
 
-        $admin = \App\Models\admin::findOrFail($id);
+        $admin = \App\Models\Admin::findOrFail($id);
         $admin->update($request->all());
 
         return redirect()->route('admin.index')
@@ -56,7 +56,7 @@ class AdminController extends Controller
 
     public function destroy(string $id)
     {
-        $admin = \App\Models\admin::findOrFail($id);
+        $admin = \App\Models\Admin::findOrFail($id);
         $admin->delete();
 
         return redirect()->route('admin.index')

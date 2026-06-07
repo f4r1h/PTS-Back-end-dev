@@ -21,7 +21,7 @@ class Alat_beratController extends Controller
     {
         $request->validate([
             'nama_alat' => 'required',
-            'kode_alat' => 'required|unique:alat_berat',
+            'kode_unit' => 'required|unique:alat_berat',
             'kondisi' => 'required',
             'status_sewa' => 'required',
             'foto_alat' => 'required',
@@ -43,7 +43,7 @@ class Alat_beratController extends Controller
     {
         $request->validate([
             'nama_alat' => 'required',
-            'kode_alat' => 'required|unique:alat_berat',
+            'kode_unit' => 'required|unique:alat_berat,kode_unit,'.$id,
             'kondisi' => 'required',
             'status_sewa' => 'required',
             'foto_alat' => 'required',

@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('nama_admin');
             $table->string('username');
-            $table->string('password')->unique;
+            $table->string('password')->unique();
             $table->enum('penanggungjawab', ['super admin', 'alat berat', 'jadwal alat', 'operator', 'properti', 'transaksi'])->default('super admin');
-            $table->string('nomer_telpon')->unique;
+            $table->string('nomer_telpon')->unique();
             $table->string('email')->unique();
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 

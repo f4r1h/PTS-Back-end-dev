@@ -21,7 +21,7 @@ return new class extends Migration
             $table->enum('kondisi', ['baik', 'perlu renovasi'])->default('baik');
             $table->enum('status_sewa',['tersedia', 'disewa', 'dipesan'])->default('tersedia');
             $table->string('foto_properti')->unique();
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 

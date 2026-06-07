@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('laporan_pekerjaan');
             $table->string('admin')->unique();
             $table->string('email');
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 

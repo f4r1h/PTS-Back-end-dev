@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class pelanggan extends Model
+class Pelanggan extends Model
 {
     use HasFactory;
+
+    protected $table = 'pelanggan';
 
     protected $fillable = [
         'nama',
@@ -19,4 +22,9 @@ class pelanggan extends Model
         'alamat',
         'tanggal_daftar',
     ];
+
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class, 'pelanggan_id');
+    }
 }

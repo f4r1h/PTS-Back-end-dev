@@ -14,12 +14,12 @@ return new class extends Migration
     Schema::create(table: 'operator', callback: function(blueprint $table):void{
             $table->id();
             $table->string('nama_operator');
-            $table->string('no_hp')->unique;
+            $table->string('no_hp')->unique();
             $table->string('alamat');
             $table->enum('status_operator', ['aktif', 'nonaktif'])->default('aktif');
             $table->string('penanggungjawab');
-            $table->foreignId('alat_berat_id')->constrained()->cascadeOnDelete();
-            $table->timestamp();
+            $table->foreignId('alat_berat_id')->constrained('alat_berat')->cascadeOnDelete();
+            $table->timestamps();
         });
 
     }

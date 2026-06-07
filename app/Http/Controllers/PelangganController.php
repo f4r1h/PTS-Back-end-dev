@@ -20,15 +20,15 @@ class PelangganController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'nama' => 'required',
             'jenis' => 'required',
-            'email' => 'required|email|unique:Pelanggan,email',
-            'nomer_telpon' => 'required|unique:Pelanggan',
-            'nomer_identitas' => 'required|unique:pelanggan',
+            'email' => 'required|email|unique:pelanggan,email',
+            'nomer_telpon' => 'required|unique:pelanggan,nomer_telpon',
+            'nomer_identitas' => 'required|unique:pelanggan,nomer_identitas',
             'nama_perusahaan' => 'required',
             'penanggungjawab' => 'required',
             'alamat' => 'required',
-            'tanggal_daftar' => 'required', 
+            'tanggal_daftar' => 'required',
         ]);
 
         \App\Models\Pelanggan::create($request->all());
@@ -46,11 +46,11 @@ class PelangganController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required',
+            'nama' => 'required',
             'jenis' => 'required',
-            'email' => 'required|email|unique:Pelanggan,email',
-            'nomer_telpon' => 'required|unique:Pelanggan',
-            'nomer_identitas' => 'required|unique:pelanggan',
+            'email' => 'required|email|unique:pelanggan,email,'.$id,
+            'nomer_telpon' => 'required|unique:pelanggan,nomer_telpon,'.$id,
+            'nomer_identitas' => 'required|unique:pelanggan,nomer_identitas,'.$id,
             'nama_perusahaan' => 'required',
             'penanggungjawab' => 'required',
             'alamat' => 'required',

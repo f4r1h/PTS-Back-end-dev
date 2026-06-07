@@ -11,18 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-    Schema::create(table: 'transaksi', callback: function(blueprint $table):void{
+        Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
+            $table->string('jenis_transaksi');
             $table->string('tanggal_transaksi');
-            $table->enum('jenis_transaksi', ['sewa', 'proyek', 'lainnya'])->default('sewa');
-            $table->enum('metode_transaksi', ['transfer', 'tunai', 'kredit'])->default('transfer');
+            $table->string('metode_transaksi');
             $table->string('total_bayar');
-            $table->enum('status_pembayaran',['lunas','belum lunas','cicil'])->default('belum lunas');
-            $table->foreignId('pelanggan_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('properti_id')->constrained()->cascadeOnDelete();
-            $table->timestamp();
+            $table->string('status_pembayaran');
+            $table->foreignId('pelanggan_id')->constrained('pelanggan')->cascadeOnDelete();
+            $table->foreignId('properti_id')->constrained('properti')->cascadeOnDelete();
+            $table->timestamps();
         });
-
     }
 
     /**

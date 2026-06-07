@@ -18,48 +18,76 @@ This project was developed by a team of student engineers consisting of:
 
 The application project was compiled by Deandre Hayfa and Farih Inayatur.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Technical Features & Setup Guide
 
-## Learning Laravel
+### Prerequisites
+* PHP >= 8.2
+* Composer
+* MySQL or SQLite
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Installation & Setup
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone & Install Dependencies**:
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Laravel Sponsors
+2. **Configure Environment**:
+   Duplicate the template environment file:
+   ```bash
+   copy .env.example .env
+   ```
+   Generate application key:
+   ```bash
+   php artisan key:generate
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. **Database Migration & Seeding**:
+   To drop all tables, recreate the schema (using Indonesian naming conventions for course alignment), and seed default credentials:
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
 
-### Premium Partners
+   **Default Accounts Seeded**:
+   * **Admin**: `dentbase11@gmail.com` | Password: `farih123`
+   * **Standard User**: `andrehayfa@gmail.com` | Password: `deandre123`
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4. **Running Locally**:
+   Start the Laravel development server:
+   ```bash
+   php artisan serve
+   ```
+   Start the Vite asset bundler:
+   ```bash
+   npm run dev
+   ```
 
-## Contributing
+5. **Running Tests**:
+   To run all feature/unit verification tests:
+   ```bash
+   php artisan test
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Architectural & Database Structure
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+This project uses standard capitalized PSR-4 namespaces, with case-aligned Eloquent model classes mapping seamlessly to their respective singular Indonesian database tables:
+* **`Admin`** (`admin` table)
+* **`Alat_berat`** (`alat_berat` table)
+* **`Halal_Industries`** (`halal_industries` table)
+* **`Jadwal_alat`** (`jadwal_alat` table)
+* **`Laporan_pekerjaan`** (`laporan_pekerjaan` table)
+* **`Operator`** (`operator` table)
+* **`Pelanggan`** (`pelanggan` table)
+* **`Properti`** (`properti` table)
+* **`Transaksi`** (`transaksi` table)
+* **`User`** (`users` table)
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
 ## License
 
