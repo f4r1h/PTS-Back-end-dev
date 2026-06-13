@@ -45,7 +45,7 @@
                     </div>
                     @if($pelanggan)
                         <div class="flex-shrink-0">
-                            <a href="{{ route('user.penyewaan.create') }}" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-gold to-[#C7831A] text-[#0D0F14] font-extrabold text-sm rounded-lg hover:from-yellow-400 hover:to-gold transition-all shadow-[0_0_15px_rgba(245,166,35,0.2)]">
+                            <a href="{{ route('user.penyewaan.create') }}" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-sm rounded-lg transition-all">
                                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                                 Ajukan Penyewaan Baru
                             </a>

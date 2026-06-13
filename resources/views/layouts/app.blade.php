@@ -45,6 +45,115 @@
             ::-webkit-scrollbar-track { background: #0D0F14; }
             ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
             ::-webkit-scrollbar-thumb:hover { background: #4B5563; }
+
+            /* Premium Buttons & Hover Styles */
+            .bg-gold, .btn-primary, button[type="submit"]:not(.toggle-pw):not(table button) {
+                background: linear-gradient(135deg, var(--gold), var(--gold-dk)) !important;
+                color: #0D0F14 !important;
+                font-weight: 800 !important;
+                transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                box-shadow: 0 4px 14px rgba(245, 166, 35, 0.2) !important;
+            }
+            .bg-gold:hover, .btn-primary:hover, button[type="submit"]:not(.toggle-pw):not(table button):hover {
+                filter: brightness(1.1) !important;
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(245, 166, 35, 0.35) !important;
+            }
+            .bg-gold:active, .btn-primary:active, button[type="submit"]:not(.toggle-pw):not(table button):active {
+                transform: translateY(0) !important;
+            }
+            .bg-gold:disabled, .btn-primary:disabled, button:disabled {
+                background: #1F2937 !important;
+                color: #4B5563 !important;
+                cursor: not-allowed !important;
+                transform: none !important;
+                box-shadow: none !important;
+                border-color: #374151 !important;
+            }
+
+            /* Table action buttons */
+            td .flex.gap-3 a, td .flex.gap-2 a, td .flex.gap-3 button, td .flex.gap-2 button {
+                padding: 6px 12px !important;
+                border-radius: 8px !important;
+                font-size: 11px !important;
+                font-weight: 700 !important;
+                transition: all 0.2s ease-in-out !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-decoration: none !important;
+                cursor: pointer !important;
+            }
+            /* Edit button styling */
+            td .flex.gap-3 a:first-child, td .flex.gap-2 a:first-child {
+                background-color: rgba(59, 130, 246, 0.1) !important;
+                border: 1px solid rgba(59, 130, 246, 0.3) !important;
+                color: #60A5FA !important;
+            }
+            td .flex.gap-3 a:first-child:hover, td .flex.gap-2 a:first-child:hover {
+                background-color: rgba(59, 130, 246, 0.25) !important;
+                border-color: #60A5FA !important;
+                color: #FFFFFF !important;
+                transform: translateY(-1px) !important;
+            }
+            /* Delete button styling */
+            td .flex.gap-3 button, td .flex.gap-2 button {
+                background: rgba(239, 68, 68, 0.1) !important;
+                border: 1px solid rgba(239, 68, 68, 0.3) !important;
+                color: #F87171 !important;
+                box-shadow: none !important;
+                transform: none !important;
+            }
+            td .flex.gap-3 button:hover, td .flex.gap-2 button:hover {
+                background: rgba(239, 68, 68, 0.25) !important;
+                border-color: #F87171 !important;
+                color: #FFFFFF !important;
+                transform: translateY(-1px) !important;
+            }
+
+            /* Fix text-dark and hover:text-dark classes */
+            .text-dark, .hover\:text-dark:hover {
+                color: #0D0F14 !important;
+            }
+
+            /* Approve action button styling */
+            .btn-action-approve {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 6px !important;
+                padding: 10px 16px !important;
+                background: rgba(245, 166, 35, 0.08) !important;
+                border: 1px solid rgba(245, 166, 35, 0.3) !important;
+                color: var(--gold) !important;
+                border-radius: 8px !important;
+                font-size: 12px !important;
+                font-weight: 700 !important;
+                transition: all 0.25s ease-in-out !important;
+                text-decoration: none !important;
+                cursor: pointer !important;
+                box-shadow: none !important;
+            }
+            .btn-action-approve:hover {
+                background: linear-gradient(135deg, var(--gold), var(--gold-dk)) !important;
+                color: #0D0F14 !important;
+                border-color: var(--gold) !important;
+                transform: translateY(-2px) !important;
+                box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3) !important;
+            }
+            .btn-action-approve:active {
+                transform: translateY(0) !important;
+            }
+            .btn-action-approve:visited {
+                color: var(--gold) !important;
+            }
+            .btn-action-approve:hover:visited {
+                color: #0D0F14 !important;
+            }
+            .bg-gold:visited, .btn-primary:visited {
+                color: #0D0F14 !important;
+            }
+
         </style>
     </head>
     <body class="font-sans antialiased bg-[#0D0F14]">

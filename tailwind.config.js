@@ -14,8 +14,16 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                gold: {
+                    DEFAULT: '#F5A623',
+                    dk: '#C7831A',
+                },
+                dark: '#0D0F14',
+            },
         },
     },
 
     plugins: [forms],
 };
+

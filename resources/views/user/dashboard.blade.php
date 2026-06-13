@@ -15,6 +15,32 @@
     <div class="py-10">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-8">
             
+            @if(session('error'))
+                <div class="bg-red-900/30 border border-red-700 text-red-400 px-5 py-3 rounded-lg text-sm flex items-center gap-2">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="text-red-400"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            @if(session('success'))
+                <div class="bg-green-900/30 border border-green-700 text-green-400 px-5 py-3 rounded-lg text-sm flex items-center gap-2">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="text-green-400"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(!$pelanggan)
+                <div class="bg-yellow-950/40 border border-yellow-800/60 text-yellow-400 px-6 py-4 rounded-xl text-sm flex items-start gap-3 shadow-sm">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="mt-0.5 text-yellow-500"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    <div>
+                        <p class="font-bold text-white mb-1">Akun Anda Belum Aktif Sebagai Pelanggan</p>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Akun pendaftaran Anda sedang menunggu persetujuan (approval) oleh Admin untuk diaktifkan menjadi Pelanggan resmi. Setelah disetujui, Anda akan dapat melakukan transaksi penyewaan alat berat secara mandiri.
+                        </p>
+                    </div>
+                </div>
+            @endif
+
             <!-- Welcome Banner -->
             <div class="bg-gradient-to-r from-dark-3 via-[#1E222E] to-dark-2 border border-dark shadow-sm sm:rounded-xl overflow-hidden relative group hover:shadow-[0_4px_25px_rgba(245,166,35,0.08)] transition-all duration-500">
                 <div class="absolute -right-10 -top-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-700 pointer-events-none"></div>
@@ -29,10 +55,17 @@
                         </p>
                     </div>
                     <div class="flex-shrink-0">
-                        <a href="{{ route('user.penyewaan.create') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold to-[#C7831A] hover:from-yellow-400 hover:to-gold text-[#0D0F14] font-extrabold text-sm rounded-xl transition-all shadow-[0_4px_15px_rgba(245,166,35,0.2)] hover:shadow-[0_4px_25px_rgba(245,166,35,0.4)] hover:-translate-y-0.5">
-                            Sewa Alat Berat Baru
-                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
-                        </a>
+                        @if($pelanggan)
+                            <a href="{{ route('user.penyewaan.create') }}" class="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm rounded-xl transition-all">
+                                Sewa Alat Berat Baru
+                                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                            </a>
+                        @else
+                            <button disabled class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 border border-gray-700 text-gray-500 font-extrabold text-sm rounded-xl cursor-not-allowed">
+                                Sewa Alat Berat Baru
+                                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -112,9 +145,15 @@
                                                 <span class="text-gray-500 text-xs font-normal">/ hari</span>
                                             </div>
                                         </div>
-                                        <a href="{{ route('user.penyewaan.create') }}?alat_id={{ $alat->id }}" class="block w-full text-center bg-dark-2 hover:bg-gold hover:text-dark border border-gray-600 hover:border-gold text-white text-sm py-2.5 rounded-lg transition-all font-bold tracking-wide">
-                                            Sewa Sekarang
-                                        </a>
+                                        @if($pelanggan)
+                                            <a href="{{ route('user.penyewaan.create') }}?alat_id={{ $alat->id }}" class="block w-full text-center bg-dark-2 hover:bg-gold hover:text-dark border border-gray-600 hover:border-gold text-white text-sm py-2.5 rounded-lg transition-all font-bold tracking-wide">
+                                                Sewa Sekarang
+                                            </a>
+                                        @else
+                                            <button disabled class="block w-full text-center bg-gray-800 border border-gray-700 text-gray-500 text-sm py-2.5 rounded-lg font-bold tracking-wide cursor-not-allowed">
+                                                Sewa Sekarang
+                                            </button>
+                                        @endif
                                     </div>
                                 @empty
                                     <div class="col-span-full py-12 text-center text-gray-500 border border-dashed border-gray-700 rounded-xl">

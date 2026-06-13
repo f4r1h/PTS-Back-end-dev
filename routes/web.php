@@ -28,7 +28,11 @@ Route::get('/dashboard', function () {
             'total_transaksi' => \App\Models\Transaksi::count(),
         ];
         $recent_transaksi = \App\Models\Transaksi::with('pelanggan')->orderBy('created_at', 'desc')->take(5)->get();
-        return view('admin.dashboard', compact('stats', 'recent_transaksi'));
+        $pending_approvals = \App\Models\User::where('role', \App\Models\User::user)
+            ->whereNotIn('email', \App\Models\Pelanggan::select('email'))
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('admin.dashboard', compact('stats', 'recent_transaksi', 'pending_approvals'));
     } else {
         $availableProperties = \App\Models\Alat_berat::where('status_sewa', 'tersedia')->get();
         $pelanggan = \App\Models\Pelanggan::where('email', $user->email)->first();
@@ -37,7 +41,7 @@ Route::get('/dashboard', function () {
             // Using jadwal_alat instead of properti if it's alat_berat rental
             $myApplications = \App\Models\Transaksi::where('pelanggan_id', $pelanggan->id)->orderBy('created_at', 'desc')->get();
         }
-        return view('user.dashboard', compact('availableProperties', 'myApplications'));
+        return view('user.dashboard', compact('availableProperties', 'myApplications', 'pelanggan'));
     }
 })->middleware(['auth', 'verified'])->name('dashboard');
 

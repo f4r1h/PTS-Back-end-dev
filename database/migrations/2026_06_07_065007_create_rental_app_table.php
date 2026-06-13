@@ -13,11 +13,27 @@ return new class extends Migration
     {
         Schema::create('rental_applications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pelanggan_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('alat_berat_id')->constrained()->cascadeOnDelete();
+
+            
+            $table->foreignId('pelanggan_id')
+                  ->constrained('pelanggan')
+                  ->cascadeOnDelete();
+
+            
+            $table->foreignId('alat_berat_id')
+                  ->constrained('alat_berat')
+                  ->cascadeOnDelete();
+
             $table->integer('duration_months');
             $table->text('message')->nullable();
-            $table->enum('status', ['pending', 'approved', 'rejected', 'cancelled'])->default('pending');
+
+            $table->enum('status', [
+                'pending',
+                'approved',
+                'rejected',
+                'cancelled'
+            ])->default('pending');
+
             $table->timestamps();
         });
     }

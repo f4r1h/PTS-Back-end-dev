@@ -31,6 +31,11 @@ class Transaksi extends Model
          return $this->belongsTo(Properti::class, 'properti_id');
      }
 
+     public function alat_berat()
+     {
+         return $this->belongsTo(Alat_berat::class, 'properti_id');
+     }
+
      public function jadwal_alat()
      {
          return $this->hasMany(Jadwal_alat::class, 'transaksi_id');
