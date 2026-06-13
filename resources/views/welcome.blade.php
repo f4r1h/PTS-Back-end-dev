@@ -76,8 +76,9 @@
         }
 
         .nav-logo-box img{
-            height: 50px;
-            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .nav-title {
@@ -762,7 +763,9 @@
 ═══════════════════════════════════════════ -->
 <nav class="navbar" id="navbar">
     <a href="/" class="nav-brand">
-        <div class="nav-logo-box"><img src="../image/logo.png" alt=""></div>
+        <div class="nav-logo-box" style="background: transparent; box-shadow: none; overflow: hidden;">
+            <img src="{{ asset('image/logo.png') }}" alt="Logo Halal Industries">
+        </div>
         <span class="nav-title">Halal <span>Industries</span></span>
     </a>
 
@@ -845,27 +848,8 @@
     <!-- Hero Visual Card -->
     <div class="hero-visual">
         <div class="hero-machine-card">
-            <div class="machine-img-placeholder">
-                <svg class="machine-svg" width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Excavator silhouette -->
-                    <rect x="10" y="80" width="80" height="22" rx="4" fill="#F5A623" opacity="0.6"/>
-                    <rect x="15" y="85" width="70" height="4" rx="2" fill="#F5A623" opacity="0.8"/>
-                    <rect x="40" y="55" width="30" height="28" rx="3" fill="#F5A623" opacity="0.5"/>
-                    <rect x="35" y="50" width="40" height="10" rx="3" fill="#F5A623" opacity="0.7"/>
-                    <!-- Arm -->
-                    <line x1="70" y1="58" x2="110" y2="35" stroke="#F5A623" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
-                    <line x1="110" y1="35" x2="135" y2="55" stroke="#F5A623" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
-                    <rect x="128" y="52" width="22" height="14" rx="3" fill="#F5A623" opacity="0.8"/>
-                    <!-- Wheels -->
-                    <circle cx="22" cy="98" r="9" fill="#C7831A" opacity="0.8"/>
-                    <circle cx="78" cy="98" r="9" fill="#C7831A" opacity="0.8"/>
-                    <circle cx="22" cy="98" r="4" fill="#0D0F14" opacity="0.5"/>
-                    <circle cx="78" cy="98" r="4" fill="#0D0F14" opacity="0.5"/>
-                    <!-- Exhaust smoke circles -->
-                    <circle cx="55" cy="25" r="8" fill="#8A94A8" opacity="0.2"/>
-                    <circle cx="65" cy="15" r="5" fill="#8A94A8" opacity="0.15"/>
-                    <circle cx="58" cy="8" r="3" fill="#8A94A8" opacity="0.1"/>
-                </svg>
+            <div class="machine-img-placeholder" style="overflow: hidden;">
+                <img src="{{ asset('image/1.jpeg') }}" alt="Excavator PC200-8" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="fleet-img-label">Excavator</div>
             </div>
             <div class="machine-badge-row">
@@ -961,17 +945,8 @@
 
         <!-- Card 1: Excavator -->
         <div class="fleet-card">
-            <div class="fleet-img">
-                <svg width="130" height="100" viewBox="0 0 130 100" fill="none" opacity="0.4">
-                    <rect x="5" y="65" width="70" height="18" rx="3" fill="#F5A623"/>
-                    <rect x="30" y="42" width="28" height="25" rx="2" fill="#F5A623"/>
-                    <rect x="28" y="38" width="32" height="8" rx="2" fill="#F5A623" opacity="0.8"/>
-                    <line x1="58" y1="46" x2="95" y2="28" stroke="#F5A623" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="95" y1="28" x2="115" y2="44" stroke="#F5A623" stroke-width="4" stroke-linecap="round"/>
-                    <rect x="108" y="41" width="18" height="11" rx="2" fill="#F5A623"/>
-                    <circle cx="18" cy="80" r="8" fill="#C7831A"/>
-                    <circle cx="62" cy="80" r="8" fill="#C7831A"/>
-                </svg>
+            <div class="fleet-img" style="overflow: hidden;">
+                <img src="{{ asset('image/1.jpeg') }}" alt="Excavator Hydraulic" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="fleet-img-label">Excavator</div>
             </div>
             <div class="fleet-body">
@@ -990,17 +965,8 @@
 
         <!-- Card 2: Bulldozer -->
         <div class="fleet-card">
-            <div class="fleet-img">
-                <svg width="130" height="100" viewBox="0 0 130 100" fill="none" opacity="0.4">
-                    <rect x="5" y="60" width="100" height="22" rx="3" fill="#F5A623"/>
-                    <rect x="10" y="65" width="90" height="5" rx="2" fill="#C7831A" opacity="0.6"/>
-                    <rect x="20" y="38" width="55" height="25" rx="3" fill="#F5A623" opacity="0.9"/>
-                    <rect x="5" y="55" width="20" height="25" rx="2" fill="#F5A623" opacity="0.8"/>
-                    <rect x="3" y="52" width="5" height="32" rx="2" fill="#C7831A"/>
-                    <circle cx="20" cy="80" r="7" fill="#C7831A"/>
-                    <circle cx="90" cy="80" r="7" fill="#C7831A"/>
-                    <circle cx="55" cy="80" r="7" fill="#C7831A" opacity="0.6"/>
-                </svg>
+            <div class="fleet-img" style="overflow: hidden;">
+                <img src="{{ asset('image/2.jpeg') }}" alt="Bulldozer D65EX" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="fleet-img-label">Bulldozer</div>
             </div>
             <div class="fleet-body">
@@ -1019,16 +985,8 @@
 
         <!-- Card 3: Motor Grader -->
         <div class="fleet-card">
-            <div class="fleet-img">
-                <svg width="130" height="100" viewBox="0 0 130 100" fill="none" opacity="0.4">
-                    <rect x="5" y="68" width="120" height="14" rx="2" fill="#F5A623" opacity="0.5"/>
-                    <rect x="40" y="50" width="50" height="22" rx="3" fill="#F5A623" opacity="0.9"/>
-                    <rect x="80" y="40" width="25" height="15" rx="2" fill="#F5A623" opacity="0.7"/>
-                    <rect x="10" y="60" width="40" height="14" rx="2" fill="#F5A623" opacity="0.6"/>
-                    <line x1="30" y1="65" x2="60" y2="65" stroke="#C7831A" stroke-width="5" stroke-linecap="round"/>
-                    <circle cx="22" cy="78" r="8" fill="#C7831A"/>
-                    <circle cx="105" cy="78" r="8" fill="#C7831A"/>
-                </svg>
+            <div class="fleet-img" style="overflow: hidden;">
+                <img src="{{ asset('image/3.jpeg') }}" alt="Motor Grader GD655-5" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="fleet-img-label">Motor Grader</div>
             </div>
             <div class="fleet-body">
@@ -1047,17 +1005,8 @@
 
         <!-- Card 4: Dump Truck -->
         <div class="fleet-card">
-            <div class="fleet-img">
-                <svg width="130" height="100" viewBox="0 0 130 100" fill="none" opacity="0.4">
-                    <rect x="5" y="62" width="120" height="18" rx="4" fill="#F5A623" opacity="0.6"/>
-                    <rect x="55" y="38" width="70" height="28" rx="3" fill="#F5A623" opacity="0.85"/>
-                    <rect x="5" y="45" width="55" height="22" rx="3" fill="#F5A623" opacity="0.7"/>
-                    <rect x="8" y="48" width="22" height="12" rx="2" fill="#0D0F14" opacity="0.4"/>
-                    <circle cx="28" cy="78" r="9" fill="#C7831A"/>
-                    <circle cx="100" cy="78" r="9" fill="#C7831A"/>
-                    <circle cx="28" cy="78" r="4" fill="#0D0F14" opacity="0.5"/>
-                    <circle cx="100" cy="78" r="4" fill="#0D0F14" opacity="0.5"/>
-                </svg>
+            <div class="fleet-img" style="overflow: hidden;">
+                <img src="{{ asset('image/4.jpeg') }}" alt="Dump Truck HD785" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="fleet-img-label">Dump Truck</div>
             </div>
             <div class="fleet-body">
@@ -1076,16 +1025,8 @@
 
         <!-- Card 5: Tower Crane -->
         <div class="fleet-card">
-            <div class="fleet-img">
-                <svg width="130" height="100" viewBox="0 0 130 100" fill="none" opacity="0.4">
-                    <rect x="60" y="10" width="6" height="80" fill="#F5A623" opacity="0.8"/>
-                    <rect x="30" y="15" width="70" height="6" fill="#F5A623" opacity="0.9"/>
-                    <rect x="30" y="15" width="40" height="6" fill="#C7831A" opacity="0.6"/>
-                    <line x1="63" y1="18" x2="100" y2="40" stroke="#F5A623" stroke-width="2" opacity="0.5"/>
-                    <line x1="63" y1="18" x2="38" y2="35" stroke="#F5A623" stroke-width="2" opacity="0.5"/>
-                    <rect x="55" y="88" width="16" height="8" rx="2" fill="#F5A623" opacity="0.7"/>
-                    <circle cx="100" cy="40" r="4" fill="#F5A623" opacity="0.6"/>
-                </svg>
+            <div class="fleet-img" style="overflow: hidden;">
+                <img src="{{ asset('image/5.jpeg') }}" alt="Tower Crane Liebherr" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="fleet-img-label">Tower Crane</div>
             </div>
             <div class="fleet-body">
@@ -1104,18 +1045,8 @@
 
         <!-- Card 6: Vibro Compactor -->
         <div class="fleet-card">
-            <div class="fleet-img">
-                <svg width="130" height="100" viewBox="0 0 130 100" fill="none" opacity="0.4">
-                    <rect x="25" y="55" width="80" height="28" rx="5" fill="#F5A623" opacity="0.7"/>
-                    <rect x="45" y="30" width="40" height="28" rx="3" fill="#F5A623" opacity="0.9"/>
-                    <rect x="55" y="22" width="20" height="10" rx="2" fill="#F5A623" opacity="0.6"/>
-                    <rect x="25" y="78" width="80" height="8" rx="4" fill="#C7831A" opacity="0.8"/>
-                    <line x1="40" y1="75" x2="40" y2="85" stroke="#F5A623" stroke-width="3"/>
-                    <line x1="55" y1="75" x2="55" y2="85" stroke="#F5A623" stroke-width="3"/>
-                    <line x1="70" y1="75" x2="70" y2="85" stroke="#F5A623" stroke-width="3"/>
-                    <line x1="85" y1="75" x2="85" y2="85" stroke="#F5A623" stroke-width="3"/>
-                    <line x1="100" y1="75" x2="100" y2="85" stroke="#F5A623" stroke-width="3"/>
-                </svg>
+            <div class="fleet-img" style="overflow: hidden;">
+                <img src="{{ asset('image/6.jpeg') }}" alt="Vibro Compactor SD100" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="fleet-img-label">Vibro Compactor</div>
             </div>
             <div class="fleet-body">
@@ -1229,7 +1160,9 @@
         <div class="features-visual">
             <div class="big-stat-card">
                 <div style="margin-bottom: 28px;">
-                    <div class="nav-logo-box" style="margin: 0 auto 16px; width: 56px; height: 56px; font-size: 24px;">HI</div>
+                    <div class="nav-logo-box" style="margin: 0 auto 16px; width: 56px; height: 56px; overflow: hidden; background: transparent; box-shadow: none;">
+                        <img src="{{ asset('image/logo.png') }}" alt="Logo Halal Industries">
+                    </div>
                     <div style="font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:800; color:var(--white);">Halal Industries</div>
                     <div style="font-size:13px; color:var(--slate); margin-top:4px;">Dipercaya sejak 2009</div>
                 </div>
@@ -1315,7 +1248,9 @@
     <div class="footer-top">
         <div class="footer-brand">
             <a href="/" class="nav-brand" style="display:inline-flex;">
-                <div class="nav-logo-box">HI</div>
+                <div class="nav-logo-box" style="background: transparent; box-shadow: none; overflow: hidden;">
+                    <img src="{{ asset('image/logo.png') }}" alt="Logo Halal Industries">
+                </div>
                 <span class="nav-title">Halal <span>Industries</span></span>
             </a>
             <p>Solusi penyewaan alat berat profesional yang amanah dan terpercaya untuk mendukung kemajuan proyek konstruksi dan infrastruktur Indonesia.</p>

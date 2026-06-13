@@ -32,7 +32,7 @@
                             <!-- Nama Lengkap / Name (to match validation) -->
                             <div>
                                 <label for="nama" class="block text-sm font-medium text-gray-300 mb-2">Nama Lengkap <span class="text-red-500">*</span></label>
-                                <input type="text" name="nama" id="nama" value="{{ old('nama') }}" required
+                                <input type="text" name="nama" id="nama" value="{{ old('nama', request('nama')) }}" required
                                     class="w-full bg-dark-4 border border-gray-700 rounded-lg focus:ring-gold focus:border-gold text-white px-4 py-2.5">
                             </div>
 
@@ -48,7 +48,7 @@
                             <!-- Email -->
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Aktif <span class="text-red-500">*</span></label>
-                                <input type="email" name="email" id="email" value="{{ old('email') }}" required
+                                <input type="email" name="email" id="email" value="{{ old('email', request('email')) }}" required
                                     class="w-full bg-dark-4 border border-gray-700 rounded-lg focus:ring-gold focus:border-gold text-white px-4 py-2.5">
                             </div>
 
@@ -69,14 +69,14 @@
                             <!-- Nama Perusahaan -->
                             <div>
                                 <label for="nama_perusahaan" class="block text-sm font-medium text-gray-300 mb-2">Nama Perusahaan <span class="text-red-500">*</span></label>
-                                <input type="text" name="nama_perusahaan" id="nama_perusahaan" value="{{ old('nama_perusahaan') }}" required
+                                <input type="text" name="nama_perusahaan" id="nama_perusahaan" value="{{ old('nama_perusahaan', request('nama_perusahaan', 'Pribadi')) }}" required
                                     class="w-full bg-dark-4 border border-gray-700 rounded-lg focus:ring-gold focus:border-gold text-white px-4 py-2.5">
                             </div>
 
                             <!-- Penanggungjawab -->
                             <div>
                                 <label for="penanggungjawab" class="block text-sm font-medium text-gray-300 mb-2">Penanggung Jawab <span class="text-red-500">*</span></label>
-                                <input type="text" name="penanggungjawab" id="penanggungjawab" value="{{ old('penanggungjawab') }}" required
+                                <input type="text" name="penanggungjawab" id="penanggungjawab" value="{{ old('penanggungjawab', request('penanggungjawab', request('nama'))) }}" required
                                     class="w-full bg-dark-4 border border-gray-700 rounded-lg focus:ring-gold focus:border-gold text-white px-4 py-2.5">
                             </div>
 

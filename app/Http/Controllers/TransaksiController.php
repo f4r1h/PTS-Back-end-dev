@@ -154,6 +154,11 @@ class TransaksiController extends Controller
 
     public function userCreate()
     {
+        $user      = auth()->user();
+        $pelanggan = Pelanggan::where('email', $user->email)->first();
+        if (!$pelanggan) {
+            return redirect()->route('dashboard')->with('error', 'Akun Anda belum disetujui sebagai pelanggan oleh Admin.');
+        }
         $availableAlat = Alat_berat::whereIn('status_sewa', ['Tersedia', 'tersedia'])->get();
         return view('penyewaan.user_create', compact('availableAlat'));
     }

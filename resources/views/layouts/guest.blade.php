@@ -300,7 +300,9 @@
     <div class="auth-wrapper">
         <!-- Brand -->
         <div class="auth-brand">
-            <a href="/" class="auth-logo">HI</a>
+            <a href="/" class="auth-logo" style="background: transparent; box-shadow: none; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px;">
+                <img src="{{ asset('image/logo.png') }}" alt="Logo Halal Industries" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </a>
             <div class="auth-brand-name">Halal <span>Industries</span></div>
             <div class="auth-brand-tagline">Sistem Manajemen Penyewaan Alat Berat</div>
         </div>
