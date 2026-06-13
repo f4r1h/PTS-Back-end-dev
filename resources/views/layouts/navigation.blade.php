@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" class="flex items-center gap-3 no-underline">
                         <div class="w-10 h-10 bg-gradient-to-br from-[#F5A623] to-[#C7831A] rounded-xl flex items-center justify-center font-condensed font-extrabold text-xl text-[#0D0F14] shadow-[0_4px_15px_rgba(245,166,35,0.3)]">
-                            HI
+                            <img src="../image/logo.png" alt="" class="w-10 h-10">
                         </div>
                         <div class="font-condensed font-bold text-xl text-white hidden sm:block tracking-wide">
                             Halal <span class="text-[#F5A623]">Industries</span>

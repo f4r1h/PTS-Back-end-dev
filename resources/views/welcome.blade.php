@@ -66,13 +66,18 @@
 
         .nav-logo-box {
             width: 42px; height: 42px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+        
             border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
             font-family: 'Barlow Condensed', sans-serif;
             font-size: 20px; font-weight: 800;
             color: var(--dark);
             box-shadow: 0 4px 15px rgba(245, 166, 35, 0.35);
+        }
+
+        .nav-logo-box img{
+            height: 50px;
+            width: auto;
         }
 
         .nav-title {
@@ -757,7 +762,7 @@
 ═══════════════════════════════════════════ -->
 <nav class="navbar" id="navbar">
     <a href="/" class="nav-brand">
-        <div class="nav-logo-box">HI</div>
+        <div class="nav-logo-box"><img src="../image/logo.png" alt=""></div>
         <span class="nav-title">Halal <span>Industries</span></span>
     </a>
 
